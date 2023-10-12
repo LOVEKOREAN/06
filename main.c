@@ -4,16 +4,35 @@
 
 
 
- void func1(void){
-     int x;
-     printf("func1 x is at %p\n", &x);
+ int sumTwo(int a, int b )
+ {
+     return (a+b);
  }
-
- int main(void) {
-    int x;
-    printf("main x is at %p\n", &x);
-    func1();
-          
+ 
+ int square(int n)
+ {
+     return (n*n);
+ }
+ 
+ int get_max(int x, int y)
+ {
+     if (x>y)
+      return x;
+     else
+      return y;
+ }
+ 
+  int main(int argc, char *argv[])
+  { int a, b;
+  a = 3;
+  b = 10;
+  
+  printf("sumTwo result is : %i\n", sumTwo(a,b));
+  printf("square result is : %i\n", square(a));
+  printf("get_max result is : %i\n", get_max(a,b));
+         
   system("PAUSE");	
-  return 0;
- }
+   return 0;
+}
+
+  
