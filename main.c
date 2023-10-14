@@ -1,38 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
-
- int sumTwo(int a, int b )
+ int factorial(int n)
  {
-     return (a+b);
+     int res=1;
+     int i;
+     for(i=1;i<=n;i++)
+       res=res*i;
+     return res;
+     
  }
- 
- int square(int n)
- {
-     return (n*n);
- }
- 
- int get_max(int x, int y)
- {
-     if (x>y)
-      return x;
-     else
-      return y;
- }
- 
+  int combination(int n, int r)
+  {
+      int div1, div2;   
+      
+      div1 = factorial(n);
+      div2 = factorial(n-r)*factorial(r);
+      
+      return(div1/div2);
+  }
+
   int main(int argc, char *argv[])
-  { int a, b;
-  a = 3;
-  b = 10;
+  {
   
-  printf("sumTwo result is : %i\n", sumTwo(a,b));
-  printf("square result is : %i\n", square(a));
-  printf("get_max result is : %i\n", get_max(a,b));
-         
+  int n, r;
+  int result; 
+   
+   printf("input n: ");
+   scanf("%d", &n);
+   printf("input r: ");
+   scanf("%d", &r); 
+  result = combination(n,r);
+
+  
+  printf("result is %i\n", result); 
+   
+  
   system("PAUSE");	
    return 0;
-}
 
-  
+}
